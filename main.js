@@ -1,46 +1,72 @@
 // Requête API
+;(async () => {
+  const products = await getProducts()
+  displayProducts(products)
+})()
 
-var header = document.querySelector('header');
-var section = document.querySelector('section');
-
-var url = 'http://localhost:3000/api/teddies';
-var request = new XMLHttpRequest();
-request.open('GET', url);
-request.responseType = 'json';
-request.send();
-
-request.onload = function() {
-    var teddies = request.response;
-    listProducts(teddies);
+// Récupération des produits
+async function getProducts() {
+  return fetch('http://localhost:3000/api/teddies')
+    .then((httpBodyResponse) => httpBodyResponse.json())
+    .then((products) => products)
+    .catch((error) => {
+      console.log(error)
+    })
 }
 
-// Affiche la liste des produits en page d'accueil
+// Affichage complet des produits
+function displayProducts(products) {
+  products.forEach((product) => {
+    buildProducts(product)
+  })
+}
 
-function listProducts(jsonObj) {
-    
-    var ours = jsonObj;
-  
-    for (var i = 0; i < jsonObj.length; i++) {
-      var myA = document.createElement('a');
-      var myArticle = document.createElement('article');
-      var myFooter = document.createElement('footer');
-      var myImg = document.createElement('img');
-      var myH2 = document.createElement('h2');
-      var myPara1 = document.createElement('p');
-  
-      myA.href = '/products.html?id=' + ours[i].id;
-      myImg.src = ours[i].imageUrl;
-      myH2.textContent = ours[i].name;
-      myPara1.textContent = ours[i].price + " €";
+// Affichage unitaire des produits
 
-      myArticle.appendChild(myImg);
-      myFooter.appendChild(myH2);
-      myFooter.appendChild(myPara1);
-      myArticle.appendChild(myFooter);
-      myA.appendChild(myArticle);
-      section.appendChild(myA);     
-      }
-    }
+function buildProducts(product) {
+
+  // Juste un raccourci
+
+  const sngp = 'singleProduct__'
+
+  // Sélection du template
+
+  const template = document.getElementById('singleProduct')
+  const clone = document.importNode(template.content, true)
+ 
+  // Quelques raccourcis vers les pointeurs des éléments
+
+  const link = clone.getElementById(sngp + 'link')
+  const description =  clone.getElementById(sngp + 'description')
+  const price = clone.getElementById(sngp + 'price')
+  const name = clone.getElementById(sngp + 'name')
+  const image = clone.getElementById(sngp + 'image')
+  
+  // Définition du contenu de chaque élément
+
+  link.href = `/product.html?id=${product._id}`
+  description.textContent = product.description
+  price.textContent = product.price
+  name.textContent = product.name
+  image.src = product.imageUrl
+
+  document.getElementById('products').appendChild(clone)
+
+  /* Suppression des ids et ajout des classes, 
+  afin d'éviter des erreurs W3C pour utilisation multiple d'un id */
+
+  link.removeAttribute('id')
+  link.classList.add(sngp + 'link')
+  description.removeAttribute('id')
+  description.classList.add(sngp + 'description')
+  price.removeAttribute('id')
+  price.classList.add(sngp + 'price')
+  name.removeAttribute('id')
+  name.classList.add(sngp + 'name')
+  image.removeAttribute('id')
+  image.classList.add(sngp + 'image')
+  
+}
 
 
     

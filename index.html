@@ -1,24 +1,60 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <!-- METADATA -->
+   
+    <!-- Métadonnées -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Test Fetch</title>
-    <!-- STYLE -->
+    
+    <!-- Imports : style, police -->
     <link rel="stylesheet" type="text/css" href="style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+
 </head>
 <body>
 
-    <header>
-        <img src="images/orinoco.png">
+    <!-- Page d'accueil -->
+    <header id="header">
+        <div id="logo__container">
+            <img id="logo" src="images/orinoco.png">
+        </div>
+        <nav id="navbar">
+            <ul id="navbar__list">
+                <li>
+                    <span class="material-icons-outlined"><a href="#"><img src="images/home.svg"></a></span>
+                </li>
+                <li>
+                    <span class="material-icons-outlined"><a href="#"><img src="images/cart.svg"></a></span>
+                </li>
+            </ul>
+        </nav>
     </header>
-    <section></section>
+    <section>
+        <ul id="products"></ul>
+    </section>
+
+    <!-- Modèle pour un seul template -->
+    <template id="singleProduct">
+        <li>
+            <a id="singleProduct__link">
+                <figure>
+                    <img id="singleProduct__image">
+                    <figcaption>
+                        <h2 id="singleProduct__name"></h2>
+                        <span id="singleProduct__price"></span>
+                        <p id="singleProduct__description"></p>
+                    </figcaption>
+                </figure>
+            </a>
+        </li>
+    </template>
     
+    <!-- Appel des scripts -->
     <script type="text/javascript" src="main.js"></script>
+
 
 </body>
 </html>

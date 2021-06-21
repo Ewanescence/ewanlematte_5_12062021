@@ -6,53 +6,64 @@ body {
     background-color: #f3e9f1;
 }
 
-header {
-    text-align: center;
-}
-
-header > img {
-    width: 256px;
-}
-
-section {
-    max-width: 880px;
-    margin: 2rem auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    column-gap: 2rem;
-    row-gap: 2rem;
-}
-
-article > img {
-    height: 14rem;
-    width: 100%;
-    border-radius: 1rem 1rem 0 0;
-    box-shadow: none;
-    object-fit: cover;
-    box-shadow: 0px 1px 1px gray;
-}
-
 a {
-    background-color: #fff;
-    border-radius: 1rem;
     text-decoration: none;
     color: inherit;
-    display: block;
 }
 
-footer {
-    padding: 1rem;
-    position: relative;
+/* _____ _   _ _____ //\ _____ _____ 
+  | ____| \ | |_   _|/_\|_   _| ____|
+  |  _| |  \| | | || ____|| | |  _|  
+  | |___| |\  | | ||  _|_ | | | |___ 
+  |_____|_| \_| |_||_____||_| |_____|                           
+*/
+
+#header {
+    max-width: 880px;
     display: flex;
-    align-items: center;
+    margin: auto;
     justify-content: space-between;
+    align-items: center;
 }
 
-footer > h2 {
-    text-transform: uppercase;
+#logo__container {
+    background-color: white;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
 }
 
-footer > p {
-    font-weight: bold;
-    font-size: 1.5rem;
+
+#logo {
+    width: 160px;
+}
+
+#navbar {
+    width: 80px;
+    background-color: white;
+    padding: 1rem 1.5rem;
+    border-radius: 1rem;
+}
+
+#navbar__list {
+    display: flex;
+    padding-left: 0px;
+    justify-content: space-between;
+    list-style: none;
+}
+
+/* ____  _____ ____ _____ ___ ___  _   _ 
+  / ___|| ____/ ___|_   _|_ _/ _ \| \ | |
+  \___ \|  _|| |     | |  | | | | |  \| |
+   ___) | |__| |___  | |  | | |_| | |\  |
+  |____/|_____\____| |_| |___\___/|_| \_|
+*/
+
+#products {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    list-style: none;
+}
+
+.singleProduct__image {
+    width: 240px;
 }
