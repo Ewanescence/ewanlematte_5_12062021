@@ -1,3 +1,5 @@
+// Requête API
+
 var header = document.querySelector('header');
 var section = document.querySelector('section');
 
@@ -12,6 +14,8 @@ request.onload = function() {
     listProducts(teddies);
 }
 
+// Affiche la liste des produits en page d'accueil
+
 function listProducts(jsonObj) {
     
     var ours = jsonObj;
@@ -24,7 +28,7 @@ function listProducts(jsonObj) {
       var myH2 = document.createElement('h2');
       var myPara1 = document.createElement('p');
   
-      myA.href = '#';
+      myA.href = '/products.html?id=' + ours[i].id;
       myImg.src = ours[i].imageUrl;
       myH2.textContent = ours[i].name;
       myPara1.textContent = ours[i].price + " €";
@@ -34,9 +38,9 @@ function listProducts(jsonObj) {
       myFooter.appendChild(myPara1);
       myArticle.appendChild(myFooter);
       myA.appendChild(myArticle);
-      section.appendChild(myA);
-        
+      section.appendChild(myA);     
       }
     }
+
 
     
