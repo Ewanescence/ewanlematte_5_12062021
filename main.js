@@ -44,11 +44,12 @@ function buildProducts(product) {
   
   // Définition du contenu de chaque élément
 
-  link.href = `/product.html?id=${product._id}`
+  link.href = `/pages/product.html?id=${product._id}`
   description.textContent = product.description
-  price.textContent = product.price
+  price.textContent = `${product.price / 100}.00 €`
   name.textContent = product.name
   image.src = product.imageUrl
+  image.alt = product.name
 
   document.getElementById('products').appendChild(clone)
 
