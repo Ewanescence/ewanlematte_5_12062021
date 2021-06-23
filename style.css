@@ -62,6 +62,10 @@ h2, h3, p, figure {
     text-align: center;
 }
 
+.material-icons-outlined:hover {
+    filter: invert(0.5);
+}
+
 /* ____  _____ ____ _____ ___ ___  _   _ 
   / ___|| ____/ ___|_   _|_ _/ _ \| \ | |
   \___ \|  _|| |     | |  | | | | |  \| |
