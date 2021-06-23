@@ -1,15 +1,64 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
+
+     
+    <!-- Métadonnées -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>product</title>
-    <script type="text/javascript" src="js/pages/products.js" defer></script>
+
+    <!-- Imports : style, police -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ba7b302cfb.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
 
-    <h1>test</h1>
+    <!-- En-tête -->
+    <header id="header">
+        <div id="header__container">
+            <a href="../index.html">
+                <img id="logo" alt="logo en-tête orinoco" src="../images/orinoco.png">
+            </a>
+            <nav id="navbar">
+                <ul id="navbar__list">
+                    <li>
+                        <a href="../index.html"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li>
+                        <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Produits -->
+    <section id="product">
+        <h2 id="product__name">Nom du produit</h2>
+        <div class="product__container">
+            <img id="product__image" src="https://via.placeholder.com/150" alt="placeholder">
+            <p id="product__description">Lorem ipsum dolor sit amet consectetur adipisicing elit. Tenetur, sapiente? Fugit alias unde velit quia veritatis optio laudantium iste eveniet reiciendis! Unde cupiditate ut magnam ducimus? Odio deleniti quia numquam!</p>
+            <label id="color__label" for="color__select">Choisissez une couleur :</label>
+            <select required name="color" id="color__select">
+                <option value="" label="Sélectionnez une couleur"></option>
+            </select>
+            <span id="product__price"></span>
+            <button id="product__button" onclick="addToCart(event)"></button>
+        </div>
+    </section>
+
+    <!-- Template -->
+    <template id="singleColor">
+        <option id="singleColor__color" label=""></option>
+    </template>
+
+    <!-- Appel des scripts -->
+    <script src="../js/pages/products.js" defer></script>
 
 </body>
 </html>

@@ -3,7 +3,7 @@ html {
 }
 
 body {
-    background-color: #f3e9f1;
+    background-color: #1f1f1f;
 }
 
 a {
@@ -13,6 +13,10 @@ a {
 
 h2, h3, p, figure {
     margin: 0;
+}
+
+h2, h3, p, label, span {
+    color: #fff;
 }
 
 /* _____ _   _ _____ //\ _____ _____ 
@@ -31,17 +35,19 @@ h2, h3, p, figure {
 }
 
 #header__container {
-    background-color: #fff;
+    background-color: #313131;
     padding: 0.5rem 1rem;
-    border-radius: 0 1rem 0 0;
+    border-radius: 1rem;
     width: 100%;
     display: grid;
-    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-columns: 1fr 2fr 0.5fr;
 }
 
 
 #logo {
     width: 160px;
+    height: 100%;
+    vertical-align: middle;
 }
 
 #navbar {
@@ -56,14 +62,31 @@ h2, h3, p, figure {
     grid-template-columns: 1fr 1fr;
     padding-left: 0px;
     list-style: none;
+    column-gap: 1rem;
+}
+
+@media (max-width: 375px) {
+    #navbar__list {
+        display: grid;
+        grid-template-columns: auto;
+        grid-template-rows: 1fr 1fr;
+        row-gap: 0.5rem;
+    }
 }
 
 #navbar__list > li {
-    text-align: center;
+    margin: auto;
 }
 
-.material-icons-outlined:hover {
-    filter: invert(0.5);
+.fas {
+    font-size: 24px;
+    color: #f1f1f1;
+}
+
+.fas:hover {
+    transform: scale(1.15);
+    transition: all 0.25s;
+    color: #8f5bfe;
 }
 
 /* ____  _____ ____ _____ ___ ___  _   _ 
@@ -73,19 +96,20 @@ h2, h3, p, figure {
   |____/|_____\____| |_| |___\___/|_| \_|
 */
 
-section {
+section, #product {
     max-width: 880px;
     margin: auto;
-    background-color: #fff;
+    background-color: #313131;
     margin-top: 0.5rem;
-    padding-top: 1rem;
+    padding-top: 2rem;
+    border-radius: 1rem;
 }
 
 section > h2 {
     margin-left: 2rem;
 }
 
-#products {
+#products, .product__container {
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 1.25rem;
@@ -108,15 +132,14 @@ section > h2 {
 }
 
 .singleProduct__link > figure {
-    background-color: #f3e9f1;
-    border-radius: 1rem 1rem 0 1rem;
-    box-shadow: 0px 5px 5px #d1d1d1;
+    background-color: #8f5bfe;
+    border-radius: 1rem;
     position: relative;
 }
 
 .singleProduct__link > figure:hover {
     transform: scale(1.025);
-    transition: transform 0.1s;
+    transition: transform 0.25s;
 }
 
 .singleProduct__link > figure > figcaption {
@@ -131,7 +154,7 @@ section > h2 {
     position: absolute;
     top: 15px;
     right: 15px;
-    background-color: #f3e9f1;
+    background-color: #8f5bfe;
     padding: 0.5rem;
     border-radius: 1rem;
     font-weight: bold;
@@ -139,4 +162,69 @@ section > h2 {
 
 .singleProduct__description {
     grid-row: 2;
+}
+
+
+/* ____  ____   ___  ____  _   _  ____ _____   ____   _    ____ _____ 
+  |  _ \|  _ \ / _ \|  _ \| | | |/ ___|_   _| |  _ \ / \  / ___| ____|
+  | |_) | |_) | | | | | | | | | | |     | |   | |_) / _ \| |  _|  _|  
+  |  __/|  _ <| |_| | |_| | |_| | |___  | |   |  __/ ___ \ |_| | |___ 
+  |_|   |_| \_\\___/|____/ \___/ \____| |_|   |_| /_/   \_\____|_____|
+*/ 
+
+.product__container {
+    gap: 1rem;
+    background-color: #8f5bfe;
+    margin-top: 2rem;
+    border-radius: 1rem;
+}
+
+#product__image {
+    grid-column: 1/3;
+    width: 100%;
+    border-radius: 1rem;
+}
+
+#product__description {
+    grid-row: 2;
+    grid-column: 1/3;
+}
+
+#color__label {
+    font-weight: bold;
+    grid-row: 3;
+    grid-column: 1/3;
+}
+
+#color__select {
+    grid-row: 4;
+    grid-column: 1/3;
+    height: 2rem;
+    font-size: 16px;
+    border-radius: 0.5rem;
+}
+
+#product__price {
+    grid-row: 5;
+    grid-column: 1/3;
+    font-weight: bold;
+    font-size: 1.5rem;
+}
+
+#product__button {
+    color: #8f5bfe;
+    background-color: white;
+    border: none;
+    font-weight: bold;
+    text-transform: uppercase;
+    height: 2.5rem;
+    border-radius: 1rem;  
+    grid-row: 6;
+    grid-column: 1/3;
+    cursor: pointer;
+}
+
+#product__button:hover {
+    filter: invert(0.15);
+    transition: all 0.25s;
 }
