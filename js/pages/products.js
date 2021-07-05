@@ -2,8 +2,6 @@
   const productId = getProductId()
   const productData = await getProductData(productId)
   displayProductData(productData)
-
-  const button = document.getElementById('product__button')
 })()
 
 // Récupère l'ID du produit dans l'url
@@ -40,6 +38,11 @@ function displayProductData(product) {
   product.colors.forEach((color) => {
     buildColors(color)
   })
+
+  button.onclick = (event) => {
+    event.preventDefault()
+    Cart.addProduct(product)
+  }
 }
 
 // Construis le champ personnalisation du produit
@@ -56,9 +59,4 @@ function buildColors(color) {
   
   option.removeAttribute('id')
   option.classList.add('singleColor__color')
-}
-
-function addToCart(event) {
-  event.preventDefault();
-  console.log("Ajout dans le panier...")
 }

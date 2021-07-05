@@ -1,12 +1,88 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
+
+    <!-- Métadonnées -->
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>product</title>
+
+    <!-- Imports : style, police -->
+    <link rel="stylesheet" type="text/css" href="../style.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/ba7b302cfb.js" crossorigin="anonymous"></script>
+
 </head>
 <body>
     
+    <!-- En-tête -->
+    <header id="header">
+        <div id="header__container">
+            <a href="../index.html">
+                <img id="logo" alt="logo en-tête orinoco" src="../images/orinoco.png">
+            </a>
+            <nav id="navbar">
+                <ul id="navbar__list">
+                    <li>
+                        <a href="../index.html"><i class="fas fa-home"></i></a>
+                    </li>
+                    <li>
+                        <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Panier -->
+    <section>
+        <h2>Panier</h2>
+        <div class="cart__container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Produit</th>
+                        <th>Quantité</th>
+                        <th>Prix</th>
+                        <th>Total</th>
+                    </tr>
+                </thead>
+                <tbody id="productsList"></tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- Formulaire -->
+    <section>
+        <h2>Formulaire</h2>
+    </section>
+
+    <!-- Template Panier -->
+    <template id="singleProduct">
+        <tr>
+            <td id="singleProduct__name"></td>
+            <td>
+                <form>
+                    <select id="singleProduct__quantity" name="quantity">
+                        <option value="1" label="1"></option>
+                        <option value="2" label="1"></option>
+                        <option value="3" label="1"></option>
+                        <option value="4" label="1"></option>
+                        <option value="5" label="1"></option>
+                        <option value="6" label="1"></option>
+                    </select>
+                </form>
+            </td>
+            <td id="singleProduct__price"></td>
+            <td id="singleProduct__total"></td>
+        </tr>
+    </template>
+
+    <!-- Appel des scripts -->
+    <script src="../js/pages/utils.js" defer></script>
+    <script src="../js/pages/cart.js" defer></script>
+
 </body>
 </html>
