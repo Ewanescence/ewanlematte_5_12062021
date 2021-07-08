@@ -1,6 +1,6 @@
 ;(async () => {
   const productId = getProductId()
-  const productData = await getProductData(productId)
+  let productData = await request.get(`http://localhost:3000/api/teddies/${productId}`)
   displayProductData(productData)
 })()
 
@@ -8,17 +8,6 @@
 
 function getProductId() {
   return new URL(window.location.href).searchParams.get('id')
-}
-
-// Requête au serveur à l'aide de l'id récupéré dans l'url
-
-function getProductData(productId) {
-  return fetch(`http://localhost:3000/api/teddies/${productId}`)
-    .catch((error) => {
-      console.log(error)
-    })
-    .then((httpBodyResponse) => httpBodyResponse.json())
-    .then((productData) => productData)
 }
 
 // Affichage des informations du produit sur la page
@@ -42,6 +31,7 @@ function displayProductData(product) {
   button.onclick = (event) => {
     event.preventDefault()
     Cart.addProduct(product)
+    window.location.href = `${window.location.origin}/pages/cart.html`
   }
 }
 

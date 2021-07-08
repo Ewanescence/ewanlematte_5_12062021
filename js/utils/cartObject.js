@@ -31,17 +31,10 @@ class CartObject {
       this.products = products
     }
   
-    // On récupère la quantité d'un produit dans le panier.
-    getProductQuantity(productId) {
-      const products = this.products
-      return products[productId].quantity
-    }
-  
     // On met à jour la quantité d'un produit dans le panier.
-    updateProductQuantity(productId, quantity) {
+    updateProductQuantity(productId) {
       const products = this.products
-      products[productId].quantity = quantity
-      console.log(products)
+      delete products[productId]
       this.products = products
     }
   

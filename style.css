@@ -236,3 +236,23 @@ section > h2 {
    \____/_/   \_\_| \_\|_|   |_| /_/   \_\____|_____|
 */
 
+#cart__container {
+    padding: 2rem;
+}
+
+#cart__container > header, #cart__container > footer, #item {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    column-gap: 1rem;
+}
+
+#cart__container > footer {
+    grid-row-end: 1fr;
+}
+
+#header__total,
+#total__price {
+    grid-column: 3/4;
+}
+
+

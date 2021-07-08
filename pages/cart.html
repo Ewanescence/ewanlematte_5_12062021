@@ -39,18 +39,17 @@
     <!-- Panier -->
     <section>
         <h2>Panier</h2>
-        <div class="cart__container">
-            <table>
-                <thead>
-                    <tr>
-                        <th>Produit</th>
-                        <th>Quantité</th>
-                        <th>Prix</th>
-                        <th>Total</th>
-                    </tr>
-                </thead>
-                <tbody id="productsList"></tbody>
-            </table>
+        <div id="cart__container">
+            <header>
+                <h3 id="header__name">Nom</h3>
+                <h3 id="header__qty">Quantité</h3>
+                <h3 id="header__price">Prix</h3>
+            </header>
+            <div id="items"></div>
+            <footer>
+                <h3 id="footer__total">Total</h3>
+                <span id="total__price">0 €</span>
+            </footer>
         </div>
     </section>
 
@@ -60,28 +59,21 @@
     </section>
 
     <!-- Template Panier -->
-    <template id="singleProduct">
-        <tr>
-            <td id="singleProduct__name"></td>
-            <td>
-                <form>
-                    <select id="singleProduct__quantity" name="quantity">
-                        <option value="1" label="1"></option>
-                        <option value="2" label="1"></option>
-                        <option value="3" label="1"></option>
-                        <option value="4" label="1"></option>
-                        <option value="5" label="1"></option>
-                        <option value="6" label="1"></option>
-                    </select>
-                </form>
-            </td>
-            <td id="singleProduct__price"></td>
-            <td id="singleProduct__total"></td>
-        </tr>
+    <template id="singleItem">
+        <div id="item">
+            <span id="name"></span>
+            <span id="qty"></span>
+            <span id="price"></span>
+            <div>
+                <a id="delete" href="#">
+                    <i class="fas fa-times"></i>
+                </a>
+            </div>
+        </div>
     </template>
 
     <!-- Appel des scripts -->
-    <script src="../js/pages/utils.js" defer></script>
+    <script src="../js/utils/cartObject.js" defer></script>
     <script src="../js/pages/cart.js" defer></script>
 
 </body>

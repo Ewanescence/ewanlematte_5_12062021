@@ -1,18 +1,8 @@
 // Requête API
 ;(async () => {
-  const products = await getProducts()
+  let products = await request.get(`http://localhost:3000/api/teddies`)
   displayProducts(products)
 })()
-
-// Récupération des produits
-async function getProducts() {
-  return fetch('http://localhost:3000/api/teddies')
-    .then((httpBodyResponse) => httpBodyResponse.json())
-    .then((products) => products)
-    .catch((error) => {
-      console.log(error)
-    })
-}
 
 // Affichage complet des produits
 function displayProducts(products) {
