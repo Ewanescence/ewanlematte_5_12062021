@@ -1,17 +1,19 @@
+// Gestion des requêtes génériques pour éviter le duplicata de code
+
 class request {
 
     static get(url) {
         return fetch(url)
             .then(function(httpBodyResponse) {
                 if (httpBodyResponse.ok) {
-                    return httpBodyResponse.json();
+                    return httpBodyResponse.json()
                 } else {
-                    throw new Error(`${httpBodyResponse.status} - ${httpBodyResponse.statusText}`);
+                    console.log(httpBodyResponse.statusText)
                 }
             })
             .catch((error) => {
-                throw new Error(`Fetch catch : ${error}`);
-            });
+                console.log(error)
+            })
     }
     
 }
