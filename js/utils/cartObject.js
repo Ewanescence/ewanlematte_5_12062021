@@ -16,9 +16,9 @@ class CartObject {
       let products = this.products
   
       // On vérifie que le produit n'est pas déjà présent dans le panier, dans ce cas...
-      const productAlreadyInCarte = !!products[productObject._id]
+      const productAlreadyInCart = !!products[productObject._id]
   
-      if (productAlreadyInCarte) {
+      if (productAlreadyInCart) {
         //... on incrémente de un la quantité du produit, sinon...
         products[productObject._id].quantity++
       } else {
@@ -32,7 +32,7 @@ class CartObject {
     }
   
     // On met à jour la quantité d'un produit dans le panier.
-    updateProductQuantity(productId) {
+    deleteProduct(productId) {
       const products = this.products
       delete products[productId]
       this.products = products

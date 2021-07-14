@@ -15,5 +15,19 @@ class request {
                 console.log(error)
             })
     }
+
+    static post(url, requestOptions) {
+        return fetch(url, requestOptions)
+        .then((response) => response.json())
+        .then((json) => {
+            window.location.href = `${window.location.origin}/pages/order.html`
+            localStorage.setItem('order', JSON.stringify(json))
+        })
+        .catch(() => {
+            alert(error)
+        })
+    
+    }
+
     
 }

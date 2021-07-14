@@ -296,9 +296,33 @@ input {
     padding: 2rem;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
+    background-color: #8f5bfe;
+    border-radius: 1rem;
 }
 
 #order__infos {
     grid-row: 3/4;
 }
 
+#order header {
+    padding: 0 2rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+}
+
+#order__title {
+    grid-column: 3/4;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+}
+
+#order__container > h3 {
+    text-align: center;
+}
+
+#order__name {
+    color: #1f1f1f;
+    font-weight: bold;
+}

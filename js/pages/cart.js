@@ -4,7 +4,7 @@
 
     //On gère l'affichage du panier
     displayProducts(products)
-
+    
     //On gère le formulaire de commande
     listeningForm()
 })()
@@ -45,7 +45,7 @@ function buildProducts(product) {
     event.preventDefault()
 
     // On passé l'id du produit concerné à notre fonction
-    Cart.updateProductQuantity(product._id)
+    Cart.deleteProduct(product._id)
 
     // On recharge notre page de manière invisible pour l'utilisateur :))
     document.location.reload()
@@ -133,15 +133,6 @@ function checkOrder() {
   }
 
   // Envoi des données, on récupère l'id renvoyé par le backend et on le transmet dans l'url
-  fetch(`http://localhost:3000/api/teddies/order`, requestOptions)
-    .then((response) => response.json())
-    .then((json) => {
-      console.log(json)
-      localStorage.removeItem('shoppingCart')
-      window.location.href = `${window.location.origin}/pages/order.html?orderId=${json.orderId}`
-    })
-    .catch(() => {
-      alert(error)
-    })
+  request.post(`http://localhost:3000/api/teddies/order`, requestOptions)
 
 }

@@ -19,36 +19,45 @@
     
     <!-- En-tête -->
     <header id="header">
-        <div id="header__container">
-            <a href="../index.html">
-                <img id="logo" alt="logo en-tête orinoco" src="../images/orinoco.png">
-            </a>
-            <nav id="navbar">
-                <ul id="navbar__list">
-                    <li>
-                        <a href="../index.html"><i class="fas fa-home"></i></a>
-                    </li>
-                    <li>
-                        <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+      <div id="header__container">
+        <a href="../index.html">
+          <img id="logo" alt="logo en-tête orinoco" src="../images/orinoco.png">
+        </a>
+        <nav id="navbar">
+          <ul id="navbar__list">
+            <li>
+              <a href="../index.html"><i class="fas fa-home"></i></a>
+            </li>
+            <li>
+              <a href="cart.html"><i class="fas fa-shopping-cart"></i></a>
+            </li>
+          </ul>
+        </nav>
+      </div>
     </header>
 
     <!-- Commande -->
     <section id="order">
-      <h2>Commande validée</h2>
+      <header>
+        <img id="logo" alt="logo en-tête orinoco" src="../images/orinoco.png">
+        <div id="order__title">
+          <h2>Commande</h2>
+          <span id="order__id"></span>
+        </div>
+      </header>
       <div id="order__container">
-        <p>Nous avons bien reçu votre commande et nous allons désormais la traiter dans les plus brefs délais. Nous vous remercions de votre confiance :)</p>
+        <h3>Merci <span id="order__name"></span><br>Votre commande de <span id="order__price"></span> a bien été enregistrée.</h3>
         <div id="order__infos">
-            <h3>Numéro de commande :</h3>
-            <span id="order__id"></span>
+          <h3>Votre commande sera expédiée à l'adresse :</h3>
+          <span id="order__adress"></span>
+          <h3>Un e-mail de confirmation est envoyée à l'adresse e-mail :</h3>
+          <span id="order__mail"></span>
         </div>
       </div>
     </section>
 
     <!-- Appel des scripts -->
+    <script src="../js/utils/cartObject.js" defer></script>
     <script src="../js/utils/request.js" defer></script>
     <script src="../js/pages/order.js" defer></script>
 
